@@ -35,10 +35,17 @@ Result
 SQL
 
 ```
-
+select t2.industry_group, t1.product_name
+from product_emissions t1
+inner join industry_groups t2 on t1.industry_group_id = t2.id
+order by t1.carbon_footprint_pcf desc
+limit 1
 ```
 Result
 
+| industry_group                     | product_name                 |
+| ---------------------------------: | ---------------------------: |
+| Electrical Equipment and Machinery | Wind Turbine G128 5 Megawats |
 
 3. What are the industries with the highest contribution to carbon emissions?
 
