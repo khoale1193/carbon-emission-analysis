@@ -49,6 +49,27 @@ Result
 
 3. What are the industries with the highest contribution to carbon emissions?
 
+SQL
+```
+select t2.industry_group, sum(t1.carbon_footprint_pcf) as carbon_emission
+from product_emissions t1
+inner join industry_groups t2 on t1.industry_group_id = t2.id
+group by t1.industry_group_id
+order by sum(t1.carbon_footprint_pcf) desc
+limit 1
+```
+
+Resul
+
+| industry_group                     | carbon_emission | 
+| ---------------------------------: | --------------: | 
+| Electrical Equipment and Machinery | 9801558         | 
+
+
+
+
+
+
 
 
 
